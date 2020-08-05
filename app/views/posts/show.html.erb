@@ -10,7 +10,7 @@
 <br>
 <h3>Users:</h3>
 <br>
-<% @post.users.each do |u| %>
+<% @post.users.uniq.each do |u| %>
 <p><%= link_to u.username, user_path(u) %></p>
 <% end %>
 <h3>Categories:</h3>
