@@ -1,11 +1,11 @@
-1.	<%= form_for @post do |f| %>
-2.	<%= f.label "Title" %>
-3.	<%= f.text_field :title %>
-4.	<%= f.label "Content" %>
-5.	<%= f.text_area :content %>
-6.	<%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-7.	<%= f.fields_for :categories, post.categories.build do |categories_fields| %>
-8.	<%= categories_fields.text_field :name %>
-9.	<% end %>
-10.	<%= f.submit %>
-11.	<% end %>
+<%= form_for @post do |f| %>
+<%= f.label "Title" %>
+<%= f.text_field :title %>
+<%= f.label "Content" %>
+<%= f.text_area :content %>
+<%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+<%= f.fields_for :categories, post.categories.build do |categories_fields| %>
+<%= categories_fields.text_field :name %>
+<% end %>
+<%= f.submit %>
+<% end %>
