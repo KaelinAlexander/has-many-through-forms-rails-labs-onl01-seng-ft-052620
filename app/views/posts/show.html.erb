@@ -21,7 +21,7 @@
 <br>
 <%= form_for @post do |f| %>
 <%= f.hidden_field :post_id, value: @post.id %>
-<%= f.collection_select :users, User.all, :id, :username %>
+<%= f.collection_select :users, User.all, :id, :username {include_blank: true} %>
 <%= f.fields_for :users, @post.users.build do |users_fields| %>
 <%= users_fields.text_field :username %>
 <% end %>
