@@ -13,6 +13,11 @@
 <% @post.users.each do |u| %>
 <p><%= u.username %></p>
 <% end %>
+<h3>Categories:</h3>
+<br>
+<% @post.categories.each do |cat| %>
+<p><%= cat.name %></p>
+<% end %>
 <br>
 <%= form_for @post do |f| %>
 <%= f.hidden_field :post_id, value: @post.id %>
