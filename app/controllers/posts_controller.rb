@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    byebug
     post = Post.create(post_params)
     redirect_to post
   end
