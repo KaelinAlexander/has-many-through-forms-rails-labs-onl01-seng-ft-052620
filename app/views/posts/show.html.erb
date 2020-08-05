@@ -19,7 +19,7 @@
 <%= f.collection_select :users, User.all, :id, :username %>
 <%= f.text_area :content %>
 <%= f.fields_for :users, @post.users.build do |users_fields| %>
-<%= users_fields.text_field :name %>
+<%= users_fields.text_field :username %>
 <% end %>
 <%= f.submit %>
 <% end %>
