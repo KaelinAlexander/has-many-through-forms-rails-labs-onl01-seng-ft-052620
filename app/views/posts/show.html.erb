@@ -12,3 +12,6 @@
 <li><%= user.username %></li>
 <% end %>
 </ul>
+<%= form_for @post do |f| %>
+<%= f.collection_select :user_username, User.all, :id, :username %>
+<%= f.text_area :content $>
