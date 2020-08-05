@@ -11,7 +11,7 @@
 <h3>Users:</h3>
 <br>
 <% @post.users.each do |u| %>
-<p><%= user.username %></p>
+<p><%= u.username %></p>
 <% end %>
 <br>
 <%= form_for @post do |f| %>
