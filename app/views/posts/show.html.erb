@@ -20,5 +20,7 @@
 <%= f.fields_for :users, @post.users.build do |users_fields| %>
 <%= users_fields.text_field :username %>
 <% end %>
+<%= f.fields_for :comments, @post.comments.build do |comments_fields| %>
+<%= comments_fields.text_area :content %>
 <%= f.submit %>
 <% end %>
