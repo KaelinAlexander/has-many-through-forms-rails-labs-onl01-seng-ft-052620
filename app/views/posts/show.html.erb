@@ -22,7 +22,9 @@
 <%= form_for @post.comments.build do |f| %>
 <%= f.hidden_field :post_id, value: @post.id %>
 <%= f.collection_select :user_id, User.all, :id, :username %>
-<input type ="text" name="comment[username]" id="comment_user_attributes_username">
+<%= f.fields_for :user, User.new do |user_fields| %>
+<%= user_fields.text_field :username %>
+<% end %>
 <%= f.text_area :content %>
 <%= f.submit %>
 <% end %>
