@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
 
   def categories_attributes=(category_attributes)
     category_attributes.values.each do |category_attribute|
+      byebug
+      # if category_attribute != nil
       category = Category.find_or_create_by(category_attribute)
       self.categories << category
     end
